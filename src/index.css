@@ -1,13 +1,169 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vw;
+  height: 65px;
+  margin: 0 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header div {
+  width: 33%;
+  text-align: center;
 }
+
+.header a {
+  text-decoration: none;
+  color: #1D1F22;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header .left-div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.header .left-div ul li {
+  margin: 3px 10px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.header .left-div ul li a {
+  padding-bottom: 20px;
+}
+
+.header .left-div ul li a:hover {
+  color: #5ECE7B;
+  border-bottom: 2px solid #5ECE7B;
+}
+
+.content {
+  margin-top: 35px;
+}
+
+.content .categoryTitle {
+  font-weight: 300;
+  text-transform: capitalize;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.content .productsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 94vw;
+  margin: 65px auto 0 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.productCard {
+  width: 28%;
+  margin: 2% auto;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+}
+
+.productCard:hover {
+  -webkit-box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+          box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+}
+
+.productCard a {
+  text-decoration: none;
+}
+
+.productCard .imgContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.productCard .imgContainer img {
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left top;
+     object-position: left top;
+}
+
+.productCard .productName {
+  font-size: 1.1em;
+  font-weight: 300;
+  color: #a7a7a0;
+}
+
+.productCard .priceTag {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #1D1F22;
+}
+
+.singleProductContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.singleProductContainer .thumbnails {
+  width: 65px;
+}
+
+.singleProductContainer .thumbnails img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.singleProductContainer .largeImage {
+  width: 300px;
+}
+
+.singleProductContainer .largeImage img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.singleProductContainer .productDiscription {
+  width: 300px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #1D1F22;
+}
+/*# sourceMappingURL=index.css.map */

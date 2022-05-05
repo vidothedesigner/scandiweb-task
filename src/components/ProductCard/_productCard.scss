@@ -1,0 +1,39 @@
+.productCard {
+    width: 28%;
+    margin: 2% auto;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: box-shadow .3s;
+
+    &:hover {
+        box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    }
+    a {
+        text-decoration: none;
+    }
+
+    .imgContainer{
+        width:100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: left top;
+        }
+    }
+
+    .productName {
+        font-size: 1.1em;
+        font-weight: 300;
+        color: #a7a7a0;
+    }
+
+    .priceTag {
+        font-weight: 600;
+        font-size: 1.1em;
+        color: #1D1F22;
+    }
+
+}
