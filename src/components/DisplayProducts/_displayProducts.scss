@@ -1,8 +1,10 @@
 .content {
+    width: 90vw;
+    margin: 0 auto;
     margin-top: 35px;
 
     .categoryTitle {
-        font-weight: 300;
+        font-weight: 400;
         text-transform: capitalize;
         width: 90vw;
         margin: 0 auto;
@@ -10,9 +12,9 @@
     
     .productsContainer {
         display: flex;
-        width: 94vw;
         margin: 65px auto 0 auto;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
 }

@@ -3,10 +3,11 @@
     width: 90vw;
     height: 65px;
     margin: 0 auto;
-    justify-content: space-around;
     align-items: center;
 
-    div {
+    .leftDiv,
+    .midDiv,
+    .rightDiv {
         width: 33%;
         text-align: center;
     }
@@ -21,7 +22,8 @@
         padding: 0;
         list-style-type: none;
     }
-    .left-div {
+
+    .leftDiv{
         ul {
             display: flex;
             width: 100%;
@@ -37,8 +39,160 @@
 
                     &:hover {
                         color: #5ECE7B;
-                        // font-weight: 500;
                         border-bottom: 2px solid #5ECE7B;
+                    }
+                }
+            }
+        }
+    }
+
+    .midDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .rightDiv{
+        ul {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+
+            li {
+                display: block;
+
+                select {
+                    box-sizing: border-box;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1.3;
+                    cursor: default;
+                    padding: 5px 10px 5px 8px;
+                    border-radius: 5px;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='292.4' height='292.4'%3E%3Cpath fill='%23333' d='M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z'/%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-position: right 8px center;
+                    background-size: 9px;
+                    background-color: #fff;
+                    color: #333;
+                }
+
+                a {
+                    display: block;
+                    position: relative;
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+
+                    span {
+                        position: absolute;
+                        top: -9px;
+                        background: #000;
+                        display: block;
+                        right: -11px;
+                        border-radius: 50%;
+                        color: white;
+                        font-weight: bold;
+                        width: 22px;
+                        height: 23px;
+                        font-size: 17px;
+                        padding-bottom: 0px;
+                    }
+                }
+            }
+
+            li.navCartLi {
+                position: relative;
+
+                .navCart {
+                    width: 400px;
+                    position: absolute;
+                    top: 25px;
+                    right: 0;
+
+                    #Cart {
+                       width: 100%;
+                       text-align: left;
+                       background-color: white;
+                       padding: 5px;
+                       
+                       .cartHeading {
+                           font-size: 20px;
+                           margin-bottom: 15px;
+                       }
+
+                       .cartProduct {
+                            .cartProductSelection {
+                                .cartProductHeading {
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    margin: 0;
+                                    line-height: 20px;
+                                }
+
+                                .priceTag {
+                                    margin: 10px 0;
+                                    span {
+                                        font-size: 16px;
+                                        font-weight: 500;
+                                    }
+                                }
+
+                                .attributeContainer {
+                                    margin-top: 5px;
+
+                                    .attributeHeading {
+                                        font-size: 14px;
+                                        font-weight: 500;
+                                        margin: 0;
+                                    }
+
+                                    .attributeSelection {
+                                        .textAttribute {
+                                            padding: 5px;
+                                            min-width: 0;
+                                            font-size: 13px;
+                                        }
+                                        .swatchAttribute {
+                                            padding: 0;
+                                            margin: 0 3px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .cartProductCount {
+                                button {
+                                    width: 20px;
+                                    height: auto;
+                                    font-size: 14px;
+                                }
+
+                                .count {
+                                    span {
+                                        font-size: 20px;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+
+                            .cartProductImage {
+                                .imagePositionContainer {
+                                    width: 100px;
+                                    height: auto;
+                                }
+                            }
+                       }
                     }
                 }
             }

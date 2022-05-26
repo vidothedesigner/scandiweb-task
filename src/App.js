@@ -16,40 +16,58 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-
 class App extends PureComponent {
   constructor(props){
     super(props)
     this.state = {
       curency: "",
-      cart: {}
+      cart: {},
+    }
+
+    this.addToCart = this.addToCart.bind(this);
+    this.onAdd = this.onAdd.bind(this);
+    this.onRemove = this.onRemove.bind(this);
+    this.onChekout = this.onChekout.bind(this);
+  }
+
+  curencyState(e) { this.setState({ curency: e }) }
+
+  chekForItems(cart, id) { return Object.keys(cart).includes(id) }
+
+  addToCart(item, selection) { this.setState({ cart: { ...this.state.cart,...{ [item.id]: { item,selection, count: 1 } } } }) }
+
+  onAdd(e) {
+    let { item, selection } = e;
+    this.setState({ cart: { ...this.state.cart,...this.chekForItems(this.state.cart,item.id) ? { [ item.id ]: { item, selection, count: e.count +1 } } : { ...this.state.cart }} } )
+  }
+
+  onRemove(e) {
+    let { item, selection } = e;
+    this.setState({ cart: { ...this.state.cart,...this.chekForItems(this.state.cart,item.id) ? { [ item.id ]: { item, selection, count: e.count -1 } } : { ...this.state.cart }} } )
+  }
+
+  onChekout() {
+    this.setState({ cart: {} })
+  }
+  
+  componentDidUpdate(){
+    let removeItemFromCart = Object.values(this.state.cart).filter( (i) => i.count === 0)
+    if(removeItemFromCart.length > 0) {
+      let curentState = this.state.cart
+      delete curentState[removeItemFromCart[0].item.id]
+      this.setState({ cart: { ...curentState }})
     }
   }
 
-  curencyState(e) {
-    // console.log(e)
-    this.setState(() => ({
-        curency: e
-    }));
-  }
-
-  addToCart(item) {
-    console.log(item,'from APP.js')
-  }
-  // componentDidUpdate(){
-  //   console.log(this.state, 'didUpdate')
-  // }
-
   render() {
     return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={ client }>
       <Router>
         <div className="App">
-          <Navbar cartFunction={this.curencyState.bind(this)} curencyState={this.state.curency} />
+          <Navbar cartFunction={ this.curencyState.bind(this) } curencyState={ this.state.curency } cartLength={ Object.keys(this.state.cart).length } cart={ this.state.cart } onAdd={ this.onAdd } onRemove={ this.onRemove } onChekout={ this.onChekout } />
           <div className="content">
-            <DynamicRoutes curencyState={this.state.curency} addToCart={this.addToCart}/>
+            <DynamicRoutes curencyState={ this.state.curency } addToCart={ this.addToCart } cart={ this.state.cart } onAdd={ this.onAdd } onRemove={ this.onRemove } onChekout={ this.onChekout } />
           </div>
-
         </div>
       </Router>
     </ApolloProvider>

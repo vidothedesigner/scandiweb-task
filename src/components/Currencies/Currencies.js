@@ -8,15 +8,12 @@ class Currencies extends PureComponent {
     displayCurrencies() {
         let data = this.props.data;
         if(data.loading) {
-            return (<option value="loading">Loading...</option>);
+            return ( <option value="loading">Loading...</option> );
         } else {
             return data.currencies.map((curency,i)=>{
-                return <option key={i} value={curency.label} onClick={(e)=>{this.clickedCurrency(e)}}>{curency.symbol} {curency.label}</option>
+                return <option key={ i } value={ curency.label }>{ curency.symbol } { curency.label }</option>
             });
         }
-    }
-    clickedCurrency(e) {
-        // if(e.target.selected) e.target.childNodes[2].remove()
     }
     componentDidUpdate(prevProps) {
         if(!this.props.data.loadng && prevProps.curencyState === "") {
@@ -26,8 +23,8 @@ class Currencies extends PureComponent {
 
     render() { 
         return ( 
-            <select name="currencies" id="currencies" onChange={(e)=>{this.props.cartFunction(e.target.value)}}>
-                {this.displayCurrencies()}
+            <select name="currencies" id="currencies" onChange={ (e)=>{ this.props.cartFunction(e.target.value) } }>
+                { this.displayCurrencies() }
             </select>
          );
     }

@@ -1,6 +1,5 @@
 import { PureComponent } from "react";
 import { graphql } from '@apollo/react-hoc';
-// import { Navigate } from "react-router-dom";
 
 //components
 import ProductCard from "../ProductCard/ProductCard";
@@ -12,15 +11,15 @@ class DisplayProducts extends PureComponent {
     manageProducts() {
         let data = this.props.data;
         if(data.loading){
-            return( <div>Loading products...</div>);
+            return( <div>Loading products...</div> );
         } else {
             return data.categories.map((cat, i) => {
                 if(this.props.catName !== cat.name){
                     return null;
                 } else {
                     return cat.products.map(product => {
-                        return <ProductCard key={product.id} product={product} curencyState={this.props.curencyState}/>
-                    })
+                        return <ProductCard key={ product.id } product={ product } curencyState={ this.props.curencyState } />
+                    });
                 }
             });
         }
@@ -28,9 +27,9 @@ class DisplayProducts extends PureComponent {
     render() {
         return (
             <div className="displaProducts">
-                <h1 className="categoryTitle">Category {this.props.catName}</h1>
+                <h1 className="categoryTitle">Category { this.props.catName }</h1>
                 <div className="productsContainer">
-                    {this.manageProducts()}
+                    { this.manageProducts() }
                 </div>
             </div>
          );
